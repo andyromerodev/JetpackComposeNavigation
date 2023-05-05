@@ -16,14 +16,14 @@ import androidx.compose.ui.tooling.preview.Preview
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FirstScreen(){
+fun SecondScreen(){
     Scaffold {
-        BodyContent()
+        SecondBodyContent()
     }
 }
 
 @Composable
-fun BodyContent(){
+fun SecondBodyContent(){
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -38,6 +38,6 @@ fun BodyContent(){
 
 @Preview (showBackground = true)
 @Composable
-fun DefaultPreview(){
-    FirstScreen()
+fun SecondDefaultPreview(){
+    SecondScreen()
 }
