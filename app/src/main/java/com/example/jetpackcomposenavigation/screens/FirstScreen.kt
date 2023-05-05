@@ -12,32 +12,28 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import com.example.jetpackcomposenavigation.navigation.AppScreens
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FirstScreen(){
+fun FirstScreen(navController: NavController) {
     Scaffold {
-        BodyContent()
+        BodyContent(navController)
     }
 }
 
 @Composable
-fun BodyContent(){
+fun BodyContent(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text("Hola Navegacion")
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = { navController.navigate(route = AppScreens.SecondScreen.route) }) {
             Text("Navega")
         }
     }
-}
-
-@Preview (showBackground = true)
-@Composable
-fun DefaultPreview(){
-    FirstScreen()
 }

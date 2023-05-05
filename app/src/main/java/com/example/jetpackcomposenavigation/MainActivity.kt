@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.jetpackcomposenavigation.screens.FirstScreen
+import com.example.jetpackcomposenavigation.navigation.AppNavigation
 import com.example.jetpackcomposenavigation.ui.theme.JetpackComposeNavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    FirstScreen()
+                    AppNavigation()
                 }
             }
         }
@@ -39,6 +39,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     JetpackComposeNavigationTheme {
-        FirstScreen()
+        AppNavigation()
     }
 }
