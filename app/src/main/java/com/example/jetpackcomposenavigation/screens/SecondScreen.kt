@@ -18,7 +18,7 @@ import com.example.jetpackcomposenavigation.navigation.AppScreens
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SecondScreen(navController: NavController){
+fun SecondScreen(navController: NavController, text: String){
     Scaffold(topBar = {
         CenterAlignedTopAppBar(
             title = {Text(
@@ -37,18 +37,19 @@ fun SecondScreen(navController: NavController){
             },
         )
     }) {
-        SecondBodyContent(navController)
+        SecondBodyContent(navController, text)
     }
 }
 
 @Composable
-fun SecondBodyContent(navController: NavController){
+fun SecondBodyContent(navController: NavController, text: String){
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text("Tu segunda Pantalla")
+        Text(text)
         Button(onClick = { navController.popBackStack() }) {
             Text("Ir atras")
         }
